@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Api.Domain
+﻿namespace Warehouse.Domain
 {
     public class MeasurementUnit
     {

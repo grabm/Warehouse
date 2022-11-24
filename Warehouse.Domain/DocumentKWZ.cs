@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Warehouse.Api.Domain
+namespace Warehouse.Domain
 {
     public class DocumentKWZ : Document
     {
@@ -15,6 +15,11 @@ namespace Warehouse.Api.Domain
             base.Approve();
 
             // TODO: add event approved document KWZ
+        }
+
+        public override bool ValidateUpdate(IEnumerable<DocumentItem> items)
+        {
+            throw new NotImplementedException();
         }
     }
 }

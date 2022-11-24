@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Warehouse.Api.Domain
+namespace Warehouse.Domain
 {
     public class DocumentMM : Document
     {
@@ -10,7 +10,7 @@ namespace Warehouse.Api.Domain
             bool quantityMoreThanZero = items.Any(x => x.Quantity > 0);
 
             if (quantityMoreThanZero)
-                throw new System.Exception("Dokument WZ akceptuje tylko ujemny stan produktu");
+                throw new Exception("Dokument WZ akceptuje tylko ujemny stan produktu");
         }
 
         public override void Approve()
@@ -22,7 +22,7 @@ namespace Warehouse.Api.Domain
 
         public override bool ValidateUpdate(IEnumerable<DocumentItem> items)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

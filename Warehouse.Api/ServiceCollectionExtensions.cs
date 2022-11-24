@@ -6,10 +6,7 @@ namespace Warehouse.Api
     {
         public static void AddWeather(this IServiceCollection services)
         {
-            services.AddTransient<WeatherForecastService>();
-            services.AddTransient<WeatherForecastService>();
-            services.AddTransient<WeatherForecastService>();
-            services.AddTransient<WeatherForecastService>();
+           
         }
     }
 }

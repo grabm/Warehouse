@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Warehouse.Api.Domain
+namespace Warehouse.Domain
 {
     public abstract class Document
     {
@@ -20,7 +20,7 @@ namespace Warehouse.Api.Domain
         public abstract bool ValidateUpdate(IEnumerable<DocumentItem> items);
 
         public Document(string documentNumber, IEnumerable<DocumentItem> items)
-        {        
+        {
             if (!items.Any())
                 throw new Exception("Dokument musi mieć chociaż jedną pozycje");
 
@@ -30,10 +30,10 @@ namespace Warehouse.Api.Domain
 
         public void Update(IEnumerable<DocumentItem> items)
         {
-            if(IsApproved)
+            if (IsApproved)
                 throw new Exception("Dokument nie może być edytowany bo został juz zatwierdzony");
 
-            if(!ValidateUpdate(items))
+            if (!ValidateUpdate(items))
                 throw new Exception("TODO ERROR - do poprawy, kazdy dokument powinien zwrocic wlasny message");
 
             _items = items.ToList();

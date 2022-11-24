@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Warehouse.Api.Domain
+namespace Warehouse.Domain
 {
     public class DocumentPZ : Document
     {
@@ -10,7 +10,7 @@ namespace Warehouse.Api.Domain
             bool quantityLessThanZero = items.Any(x => x.Quantity < 0);
 
             if (quantityLessThanZero)
-                throw new System.Exception("Dokument PZ akceptuje tylko dodatni stan produktu");
+                throw new Exception("Dokument PZ akceptuje tylko dodatni stan produktu");
         }
 
         public override void Approve()
