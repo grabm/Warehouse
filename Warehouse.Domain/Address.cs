@@ -1,6 +1,8 @@
-﻿namespace Warehouse.Domain
+﻿using Warehouse.Domain.Abstraction;
+
+namespace Warehouse.Domain
 {
-    public class Address
+    public class Address : ValueObject
     {
         public string Country { get; set; }
         public string City { get; set; }

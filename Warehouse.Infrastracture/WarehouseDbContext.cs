@@ -1,34 +1,35 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Warehouse.Domain;
 
 namespace Warehouse.Infrastructure
 {
     public class WarehouseDbContext: DbContext
     {
-        private readonly MongoClient client;
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Contractor> Contractors { get; set; }
+        public DbSet<DocumentKPZ> KPZDocuments { get; set; }
+        public DbSet<DocumentKWZ> KWZDocuments { get; set; }
+        public DbSet<DocumentMM> MMDocuments { get; set; }
+        public DbSet<DocumentPZ> PZDocuments { get; set; }
+        public DbSet<DocumentWZ> WZDocuments { get; set; }
+        public DbSet<MeasurementUnit> MeasurementUnits { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Region> Regions { get; set; }
 
-        public WarehouseDbContext(MongoClient client)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            this.client = client;
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Category>();
+            
+
+            // -- Bulk registration
+            //modelBuilder.ApplyConfigurationsFromAssembly(
+            //    Assembly.GetAssembly(typeof(StaffTrainingContext)
+            //    ));
+
+            // -- Single registration
+            // modelBuilder.ApplyConfiguration(new AttendeeConfiguration());
         }
-
-        //public IQueryable<Product> Products => client.
-
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //}
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //}
-
-
     }
 }

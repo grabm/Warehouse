@@ -7,7 +7,6 @@
         public long WarehouseRegionId { get; private set; }
 
         public Address Address { get; private set; }
-        public WarehouseRegion WarehouseRegion { get; private set; }
 
         public Warehouse(string name, long warehouseRegionId, Address address)
         {

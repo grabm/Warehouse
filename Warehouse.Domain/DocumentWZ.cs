@@ -19,5 +19,10 @@ namespace Warehouse.Domain
 
             // TODO: add event approved document WZ
         }
+
+        public override bool ValidateUpdate(IEnumerable<DocumentItem> items)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

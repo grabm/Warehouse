@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Warehouse.Domain.Abstraction;
 
 namespace Warehouse.Domain
 {
-    public abstract class Document
+    public abstract class Document : IAggregateRoot
     {
         private ICollection<DocumentItem> _items;
 

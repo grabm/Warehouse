@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Warehouse.Domain.Abstraction;
 
 namespace Warehouse.Domain
 {
-    public class WarehouseRegion
+    public class Region : IAggregateRoot
     {
         private ICollection<Warehouse> _warehouses;
 
@@ -11,7 +12,7 @@ namespace Warehouse.Domain
 
         public IEnumerable<Warehouse> Warehouses => _warehouses;
 
-        public WarehouseRegion(string name)
+        public Region(string name)
         {
             Name = name;
         }

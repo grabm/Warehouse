@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Warehouse.Domain.Abstraction;
 
 namespace Warehouse.Domain
 {
-    public class Product
+    public class Product : IAggregateRoot
     {
         private ICollection<ProductItem> _items;
 
