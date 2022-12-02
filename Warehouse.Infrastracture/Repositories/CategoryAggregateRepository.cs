@@ -9,20 +9,10 @@ using Warehouse.Domain;
 
 namespace Warehouse.Infrastructure.Repositories
 {
-    internal class CategoryAggregateRepository : IAggregateRepository<Category>
+    internal class CategoryAggregateRepository : BaseRepository<Category>
     {
-        private WarehouseDbContext _context;
-
-        public CategoryAggregateRepository(WarehouseDbContext context)
+        public CategoryAggregateRepository(WarehouseDbContext context): base(context)
         {
-            _context = context;
         }
-
-        public async Task<Category> GetAsync(long id)
-        {
-           return await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-        public Task SaveChangesAsync() => _context.SaveChangesAsync();
     }
 }

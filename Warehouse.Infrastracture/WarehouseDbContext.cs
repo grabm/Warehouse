@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Warehouse.Domain;
+using Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration;
 
 namespace Warehouse.Infrastructure
 {
@@ -20,16 +22,10 @@ namespace Warehouse.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>();
-            
-
-            // -- Bulk registration
-            //modelBuilder.ApplyConfigurationsFromAssembly(
-            //    Assembly.GetAssembly(typeof(StaffTrainingContext)
-            //    ));
-
-            // -- Single registration
-            // modelBuilder.ApplyConfiguration(new AttendeeConfiguration());
+            //--Bulk registration
+            modelBuilder.ApplyConfigurationsFromAssembly(
+                Assembly.GetAssembly(typeof(WarehouseDbContext)
+                ));
         }
     }
 }

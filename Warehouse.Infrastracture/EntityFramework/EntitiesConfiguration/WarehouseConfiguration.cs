@@ -1,20 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Warehouse.Domain;
 
 namespace Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration
 {
-    public class RegionConfiguration : IEntityTypeConfiguration<Region>
+    public class WarehouseConfiguration : IEntityTypeConfiguration<Domain.Warehouse>
     {
-        public void Configure(EntityTypeBuilder<Region> builder)
+        public void Configure(EntityTypeBuilder<Domain.Warehouse> builder)
         {
             builder.Property(x => x.Name)
                 .HasMaxLength(300)
                 .IsRequired();
-
-            builder.HasMany(x => x.Warehouses)
-                .WithOne()
-                .HasForeignKey(x => x.RegionId);
         }
     }
 }

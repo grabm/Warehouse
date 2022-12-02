@@ -9,6 +9,7 @@ namespace Warehouse.Domain
         public decimal Price { get; private set; }
         public long ProductId { get; private set; }
         public long MeasurementUnitId { get; private set; }
+        public long DocumentId { get; private set; }
 
         public DocumentItem(decimal quantity, decimal price, long productId, long measurementUnitId)
         {

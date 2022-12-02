@@ -16,6 +16,7 @@ namespace Warehouse.Domain
         public DateTime ApprovalDate { get; private set; }
         public DateTime CreateDate { get; private set; }
         public DateTime ModifiedDate { get; private set; }
+        public string DocumentType { get; private set; }
 
         public IEnumerable<DocumentItem> Items => _items;
         public abstract bool ValidateUpdate(IEnumerable<DocumentItem> items);
