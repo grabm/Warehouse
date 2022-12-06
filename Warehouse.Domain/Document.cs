@@ -10,6 +10,10 @@ namespace Warehouse.Domain
     {
         private ICollection<DocumentItem> _items;
 
+        protected Document()
+        {
+        }
+
         public long Id { get; private set; }
         public string DocumentNumber { get; private set; }
         public bool IsApproved { get; private set; }

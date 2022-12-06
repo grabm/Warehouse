@@ -5,6 +5,10 @@ namespace Warehouse.Domain
 {
     public class DocumentMM : Document
     {
+        protected DocumentMM()
+        {
+
+        }
         public DocumentMM(string documentNumber, IEnumerable<DocumentItem> items) : base(documentNumber, items)
         {
             bool quantityMoreThanZero = items.Any(x => x.Quantity > 0);

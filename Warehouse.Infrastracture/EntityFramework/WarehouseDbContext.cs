@@ -3,10 +3,15 @@ using System.Reflection;
 using Warehouse.Domain;
 using Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration;
 
-namespace Warehouse.Infrastructure
+namespace Warehouse.Infrastructure.EntityFramework
 {
-    public class WarehouseDbContext: DbContext
+    public class WarehouseDbContext : DbContext
     {
+        public WarehouseDbContext(DbContextOptions<WarehouseDbContext> options)
+         : base(options)
+        {
+        }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contractor> Contractors { get; set; }
         public DbSet<DocumentKPZ> KPZDocuments { get; set; }

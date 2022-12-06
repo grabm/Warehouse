@@ -8,6 +8,11 @@
 
         public Address Address { get; private set; }
 
+        protected Warehouse()
+        {
+
+        }
+
         public Warehouse(string name, long warehouseRegionId, Address address)
         {
             Name = name;

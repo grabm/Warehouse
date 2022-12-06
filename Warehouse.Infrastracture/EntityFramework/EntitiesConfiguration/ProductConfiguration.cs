@@ -15,6 +15,11 @@ namespace Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration
             builder.HasMany(x => x.Items)
                 .WithOne()
                 .HasForeignKey(x => x.ProductId);
+
+
+            builder.HasOne<DocumentItem>()
+             .WithOne()
+             .HasForeignKey<DocumentItem>(x => x.ProductId);
         }
     }
 }

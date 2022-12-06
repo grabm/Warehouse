@@ -7,6 +7,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Warehouse.Application.Abstractions;
+using Warehouse.Domain;
+using Warehouse.Domain.Abstraction;
+using Warehouse.Infrastructure.EntityFramework;
+using Warehouse.Infrastructure.Repositories;
 
 namespace Warehouse.Infrastructure
 {
@@ -15,6 +20,8 @@ namespace Warehouse.Infrastructure
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<WarehouseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Sql")));
+
+            services.AddScoped<IAggregateRepository<Category>, CategoryAggregateRepository>();
         }
     }
 }

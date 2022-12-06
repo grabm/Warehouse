@@ -11,6 +11,11 @@ namespace Warehouse.Domain
         public long DocumentItemId { get; private set; }
         public DateTime CreateDate { get; private set; }
 
+        protected ProductItem()
+        {
+
+        }
+
         public ProductItem(DocumentItem documentItem)
         {
             Quantity = documentItem.Quantity;

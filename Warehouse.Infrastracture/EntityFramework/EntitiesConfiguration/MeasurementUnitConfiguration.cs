@@ -11,6 +11,11 @@ namespace Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration
             builder.Property(x => x.Name)
                 .HasMaxLength(10)
                 .IsRequired();
+
+            builder.HasMany<Product>()
+                .WithOne()
+                .HasForeignKey(x => x.MeasurementUnitId);
+                
         }
     }
 }

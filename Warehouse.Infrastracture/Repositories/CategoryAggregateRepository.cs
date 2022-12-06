@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Warehouse.Application.Abstractions;
 using Warehouse.Domain;
+using Warehouse.Infrastructure.EntityFramework;
 
 namespace Warehouse.Infrastructure.Repositories
 {
-    internal class CategoryAggregateRepository : BaseRepository<Category>
+    internal class CategoryAggregateRepository : BaseAggregateRepository<Category>
     {
         public CategoryAggregateRepository(WarehouseDbContext context): base(context)
         {

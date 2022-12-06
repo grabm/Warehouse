@@ -5,6 +5,10 @@ namespace Warehouse.Domain
 {
     public class DocumentPZ : Document
     {
+        protected DocumentPZ()
+        {
+
+        }
         public DocumentPZ(string documentNumber, IEnumerable<DocumentItem> items) : base(documentNumber, items)
         {
             bool quantityLessThanZero = items.Any(x => x.Quantity < 0);

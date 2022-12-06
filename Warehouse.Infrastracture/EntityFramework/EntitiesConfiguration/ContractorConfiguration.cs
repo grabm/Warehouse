@@ -12,8 +12,10 @@ namespace Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration
                 .HasMaxLength(100)
                 .IsRequired();
 
-            builder.Property(x => x.Address.City)
-                .IsRequired();
+            //builder.Property(x => x.Address.City)
+            //    .IsRequired();
+
+            builder.OwnsOne(x => x.Address);
         }
     }
 }

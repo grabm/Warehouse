@@ -11,6 +11,11 @@ namespace Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration
             builder.Property(x => x.DocumentNumber)
                 .HasMaxLength(500)
                 .IsRequired();
+
+            builder.HasOne<DocumentKPZ>()
+            .WithOne()
+            .HasForeignKey<DocumentKPZ>(x => x.DocumentPZId)
+            .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 }

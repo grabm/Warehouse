@@ -12,6 +12,7 @@ namespace Warehouse.Infrastructure.EntityFramework.EntitiesConfiguration
                 .HasMaxLength(500)
                 .IsRequired();
 
+      
         }
     }
 }
