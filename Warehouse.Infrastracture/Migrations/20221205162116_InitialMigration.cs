@@ -218,12 +218,6 @@ namespace Warehouse.Infrastructure.Migrations
                 column: "DocumentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DocumentItem_ProductId",
-                table: "DocumentItem",
-                column: "ProductId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProductItem_ProductId",
                 table: "ProductItem",
                 column: "ProductId");

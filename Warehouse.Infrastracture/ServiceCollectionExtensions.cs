@@ -22,6 +22,9 @@ namespace Warehouse.Infrastructure
             services.AddDbContext<WarehouseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Sql")));
 
             services.AddScoped<IAggregateRepository<Category>, CategoryAggregateRepository>();
+            services.AddScoped<IAggregateRepository<DocumentPZ>, DocumentPZAggregateRepository>();
+            services.AddScoped<IAggregateRepository<DocumentKPZ>, DocumentKPZAggregateRepository>();
+            services.AddScoped<IAggregateRepository<Region>, RegionAggregateRepository>();
         }
     }
 }

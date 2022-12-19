@@ -15,6 +15,20 @@ namespace Warehouse.Domain
         public Region(string name)
         {
             Name = name;
+            _warehouses = new List<Warehouse>();
+        } 
+
+        public Warehouse AddWarehouse(string name, Address address)
+        {
+            if (_warehouses.Any(x => x.Name == name || x.Address == address))
+            {
+                throw new Exception("Już istnieje magazyn o tej nazwie lub adresie");
+            }
+
+            var warehouse = new Warehouse(name, Id, address);
+            _warehouses.Add(warehouse);
+
+            return warehouse;
         }
     }
 }

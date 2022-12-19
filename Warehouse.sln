@@ -5,15 +5,17 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Api", "Warehouse.Api\Warehouse.Api.csproj", "{FFFC561D-9E8F-4E41-9F2B-E9117ABEE945}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Domain", "Warehouse.Domain\Warehouse.Domain.csproj", "{C3D2BDED-F1DB-4D47-9A8D-92437DD9E2D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Domain", "Warehouse.Domain\Warehouse.Domain.csproj", "{C3D2BDED-F1DB-4D47-9A8D-92437DD9E2D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Application", "Warehouse.Application\Warehouse.Application.csproj", "{0C95E668-BFF4-4D59-9ED6-167D288D7154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Application", "Warehouse.Application\Warehouse.Application.csproj", "{0C95E668-BFF4-4D59-9ED6-167D288D7154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Infrastructure", "Warehouse.Infrastracture\Warehouse.Infrastructure.csproj", "{0ADEA798-BB54-4121-B30B-1DDEBE6E2C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Infrastructure", "Warehouse.Infrastracture\Warehouse.Infrastructure.csproj", "{0ADEA798-BB54-4121-B30B-1DDEBE6E2C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Application.Abstractions", "Warehouse.Application.Abstractions\Warehouse.Application.Abstractions.csproj", "{E64D40D3-E0D5-4016-9C57-8F7DEC36B84E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Application.Abstractions", "Warehouse.Application.Abstractions\Warehouse.Application.Abstractions.csproj", "{E64D40D3-E0D5-4016-9C57-8F7DEC36B84E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Domain.Abstraction", "Warehouse.Domain.Abstraction\Warehouse.Domain.Abstraction.csproj", "{F9589C4A-67E9-4E8C-B2C0-3F87DBD837A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Warehouse.Domain.Abstraction", "Warehouse.Domain.Abstraction\Warehouse.Domain.Abstraction.csproj", "{F9589C4A-67E9-4E8C-B2C0-3F87DBD837A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.Primitives.CQRS", "Warehouse.Primitives.CQRS\Warehouse.Primitives.CQRS.csproj", "{6EFC7EB3-F158-4FCF-A770-F5F9972F374F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F9589C4A-67E9-4E8C-B2C0-3F87DBD837A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9589C4A-67E9-4E8C-B2C0-3F87DBD837A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9589C4A-67E9-4E8C-B2C0-3F87DBD837A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFC7EB3-F158-4FCF-A770-F5F9972F374F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFC7EB3-F158-4FCF-A770-F5F9972F374F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFC7EB3-F158-4FCF-A770-F5F9972F374F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFC7EB3-F158-4FCF-A770-F5F9972F374F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

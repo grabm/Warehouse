@@ -14,7 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Warehouse.Application.Abstractions\Warehouse.Application.Abstractions.csproj" />
     <ProjectReference Include="..\Warehouse.Domain\Warehouse.Domain.csproj" />
+    <ProjectReference Include="..\Warehouse.Primitives.CQRS\Warehouse.Primitives.CQRS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Region\Queries\" />
+    <Folder Include="Features\Warehouse\Queries\" />
   </ItemGroup>
 
 </Project>
