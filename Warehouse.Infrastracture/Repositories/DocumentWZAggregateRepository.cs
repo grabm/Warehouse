@@ -1,11 +1,11 @@
 ﻿using Warehouse.Domain;
-using Warehouse.Infrastructure.EntityFramework;
+using Warehouse.Infrastructure.EntityFramework.Write;
 
 namespace Warehouse.Infrastructure.Repositories
 {
     public class DocumentWZAggregateRepository : BaseAggregateRepository<DocumentWZ>
     {
-        public DocumentWZAggregateRepository(WarehouseDbContext context) : base(context)
+        public DocumentWZAggregateRepository(WarehouseWriteDbContext context) : base(context)
         {
         }
     }

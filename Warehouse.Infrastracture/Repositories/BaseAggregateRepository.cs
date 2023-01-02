@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 using Warehouse.Application.Abstractions;
 using Warehouse.Domain;
 using Warehouse.Domain.Abstraction;
-using Warehouse.Infrastructure.EntityFramework;
+using Warehouse.Infrastructure.EntityFramework.Write;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Warehouse.Infrastructure.Repositories
 {
     public abstract class BaseAggregateRepository<T> : IAggregateRepository<T> where T : class, IAggregateRoot
     {
-        protected WarehouseDbContext _context;
+        protected WarehouseWriteDbContext _context;
 
-        public BaseAggregateRepository(WarehouseDbContext context)
+        public BaseAggregateRepository(WarehouseWriteDbContext context)
         {
             _context = context;
         }

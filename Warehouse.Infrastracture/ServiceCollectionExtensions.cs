@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using Warehouse.Application.Abstractions;
 using Warehouse.Domain;
 using Warehouse.Domain.Abstraction;
-using Warehouse.Infrastructure.EntityFramework;
+using Warehouse.Infrastructure.EntityFramework.Read.Entities;
+using Warehouse.Infrastructure.EntityFramework.Write;
 using Warehouse.Infrastructure.Repositories;
 
 namespace Warehouse.Infrastructure
@@ -19,7 +20,7 @@ namespace Warehouse.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<WarehouseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Sql")));
+            services.AddDbContext<WarehouseWriteDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Sql")));
 
             services.AddScoped<IAggregateRepository<Category>, CategoryAggregateRepository>();
             services.AddScoped<IAggregateRepository<DocumentPZ>, DocumentPZAggregateRepository>();

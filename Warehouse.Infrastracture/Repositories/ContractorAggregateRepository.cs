@@ -1,11 +1,11 @@
 ﻿using Warehouse.Domain;
-using Warehouse.Infrastructure.EntityFramework;
+using Warehouse.Infrastructure.EntityFramework.Write;
 
 namespace Warehouse.Infrastructure.Repositories
 {
     public class ContractorAggregateRepository : BaseAggregateRepository<Contractor>
     {
-        public ContractorAggregateRepository(WarehouseDbContext context) : base(context)
+        public ContractorAggregateRepository(WarehouseWriteDbContext context) : base(context)
         {
         }
     }

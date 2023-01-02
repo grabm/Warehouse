@@ -23,7 +23,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Warehouse.Application.Abstractions\Warehouse.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\Warehouse.Application.Readmodels\Warehouse.Application.Readmodels.csproj" />
     <ProjectReference Include="..\Warehouse.Domain\Warehouse.Domain.csproj" />
+    <ProjectReference Include="..\Warehouse.Primitives.CQRS\Warehouse.Primitives.CQRS.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Region\**" />
+    <EmbeddedResource Remove="Features\Region\**" />
+    <None Remove="Features\Region\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
     <PackageReference Include="MediatR" Version="11.1.0" />
@@ -15,13 +21,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Warehouse.Application.Abstractions\Warehouse.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\Warehouse.Application.Readmodels\Warehouse.Application.Readmodels.csproj" />
+    <ProjectReference Include="..\Warehouse.Domain.ReadModels\Warehouse.Domain.ReadModels.csproj" />
     <ProjectReference Include="..\Warehouse.Domain\Warehouse.Domain.csproj" />
     <ProjectReference Include="..\Warehouse.Primitives.CQRS\Warehouse.Primitives.CQRS.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Region\Queries\" />
-    <Folder Include="Features\Warehouse\Queries\" />
   </ItemGroup>
 
 </Project>

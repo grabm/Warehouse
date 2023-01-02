@@ -20,6 +20,8 @@ namespace Warehouse.Domain
         {
             Quantity = documentItem.Quantity;
             Price = documentItem.Price;
+
+
         }
     }
 }

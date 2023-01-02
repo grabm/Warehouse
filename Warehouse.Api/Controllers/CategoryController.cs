@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Warehouse.Api.Controllers.Requests;
-using Warehouse.Application.Abstractions;
-using Warehouse.Domain;
+using Warehouse.Application.Features.Category.CreateCategory;
 
 namespace Warehouse.Api.Controllers
 {
@@ -11,22 +10,19 @@ namespace Warehouse.Api.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IAggregateRepository<Category> _aggregateRepository;
+        private readonly IMediator _mediator;
 
-        public CategoryController(IAggregateRepository<Category> aggregateRepository)
+        public CategoryController(IMediator mediator)
         {
-            _aggregateRepository = aggregateRepository;
+            _mediator = mediator;
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCatogry([FromBody] CreateCategoryRequest request)
         {
-            await _aggregateRepository.CreateAsync(new Category
-            {
-                Name = request.Name
-            });
+            var categoryId = await _mediator.Send(new CreateCategoryCommand() { Name = request.Name});
 
-            return Ok();
+            return Ok(categoryId);
         }
     }
 }

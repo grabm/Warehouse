@@ -1,11 +1,12 @@
 ﻿using Warehouse.Domain;
-using Warehouse.Infrastructure.EntityFramework;
+using Warehouse.Domain.ReadModels;
+using Warehouse.Infrastructure.EntityFramework.Write;
 
 namespace Warehouse.Infrastructure.Repositories
 {
-    internal class RegionAggregateRepository : BaseAggregateRepository<Region>
+    internal class RegionAggregateRepository : BaseAggregateRepository<Domain.Region>
     {
-        public RegionAggregateRepository(WarehouseDbContext context) : base(context)
+        public RegionAggregateRepository(WarehouseWriteDbContext context) : base(context)
         {
         }
     }
